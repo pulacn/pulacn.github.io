@@ -55,31 +55,27 @@
   .lb-next { right:16px; }
   .lb-cap { position:absolute; bottom:20px; left:0; right:0; text-align:center; color:#e8e0d0; font-size:14px; letter-spacing:1px; padding:0 16px; }
   .lb-hint { position:absolute; top:14px; left:24px; color:#9a907d; font-size:12px; letter-spacing:2px; }
-  /* 杂志排版区 */
+  /* 杂志排版区（大图+左右配文） */
   .mag { margin-top:44px; background:#fffdf8; border:1px solid #e2d9c6; padding:34px 34px 26px; position:relative; }
   .mag-kicker { display:block; font-size:11px; letter-spacing:4px; color:#a49c8e; text-transform:uppercase; }
   .mag h3 { font-family:Georgia,"Songti SC","SimSun",serif; font-size:30px; font-weight:700; letter-spacing:6px; color:#8c3b2e; margin:10px 0 6px; }
   .mag-lede { font-size:13px; color:#6b6257; letter-spacing:1px; max-width:760px; line-height:1.9; }
-  .mag-rule { height:2px; background:#c9a86a; margin:22px 0 20px; }
-  .mag-body { display:flex; flex-wrap:wrap; gap:26px; }
-  .mag-cols { flex:1 1 300px; max-width:430px; }
-  .mag-cols p { font-size:13px; color:#4a443c; line-height:1.95; text-align:justify; column-count:2; column-gap:22px; }
-  .mag-plates { flex:2 1 520px; display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
-  .m-item { background:#fff; border:1px solid #e5e0d6; position:relative; padding:8px 8px 10px; }
-  .m-item.big { grid-column:span 2; grid-row:span 2; }
-  .m-frame { background:#efe9de; display:flex; align-items:center; justify-content:center; overflow:hidden; }
-  .m-item.big .m-frame { aspect-ratio:1/1; }
-  .m-item.small .m-frame { aspect-ratio:1/1; }
-  .m-frame img { max-width:100%; max-height:100%; object-fit:contain; display:block; }
-  .m-num { position:absolute; top:10px; left:10px; background:#8c3b2e; color:#fffdf8; font-size:11px; letter-spacing:1px; padding:2px 7px; }
-  .m-cap { margin-top:8px; font-size:12px; color:#4a443c; letter-spacing:1px; line-height:1.5; }
-  .m-cap small { display:block; color:#a49c8e; font-size:10.5px; margin-top:2px; letter-spacing:2px; }
-  .mag-note { grid-column:span 2; display:flex; align-items:center; justify-content:center; text-align:center; border:1px dashed #d8c9ae; background:#faf6ee; color:#8c6f4a; font-size:13px; letter-spacing:2px; line-height:1.9; padding:18px; }
-  .mag-captions { margin-top:24px; border-top:1px solid #e2d9c6; padding-top:14px; column-count:2; column-gap:34px; }
+  .mag-rule { height:2px; background:#c9a86a; margin:24px 0 30px; }
+  .mag-row { display:flex; gap:38px; align-items:flex-start; margin-bottom:46px; }
+  .mag-row.flip .mag-text { order:2; }
+  .mag-text { flex:0 0 300px; border-top:3px double #c9a86a; padding-top:16px; }
+  .mag-text h4 { font-family:Georgia,"Songti SC","SimSun",serif; font-size:18px; color:#8c3b2e; letter-spacing:2px; line-height:1.6; }
+  .mag-text h4 small { display:block; font-size:10px; color:#a49c8e; letter-spacing:3px; text-transform:uppercase; margin-bottom:7px; font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif; }
+  .mag-text p { font-size:12.5px; color:#4a443c; line-height:2.05; text-align:justify; margin-top:12px; }
+  .mag-fig { flex:1 1 auto; min-width:0; }
+  .mag-fig img { width:100%; height:auto; display:block; background:#efe9de; }
+  .mag-fig figcaption { font-size:11px; color:#a49c8e; letter-spacing:2px; margin-top:9px; border-top:1px solid #e2d9c6; padding-top:7px; }
+  .mag-fig figcaption b { color:#8c3b2e; font-weight:700; }
+  .mag-captions { margin-top:6px; border-top:1px solid #e2d9c6; padding-top:14px; column-count:2; column-gap:34px; }
   .mag-captions p { font-size:11.5px; color:#6b6257; line-height:2; }
   .mag-captions b { color:#8c3b2e; font-weight:700; }
   .mag-foot { margin-top:18px; border-top:1px double #e2d9c6; padding-top:10px; display:flex; justify-content:space-between; font-size:10.5px; letter-spacing:3px; color:#a49c8e; }
-  @media (max-width:820px){ .mag-cols{max-width:none;flex:1 1 100%;} .mag-plates{grid-template-columns:repeat(2,1fr);} .m-item.big{grid-column:span 2;grid-row:span 1;} .mag-note{grid-column:span 2;} .mag-captions{column-count:1;} }
+  @media (max-width:820px){ .mag-row{flex-direction:column;gap:18px;margin-bottom:34px;} .mag-text{flex:1 1 100%;order:0!important;} .mag-captions{column-count:1;} }
 </style>
 </head>
 <body>
@@ -207,22 +203,39 @@
     <h3>让家具进入空间</h3>
     <p class="mag-lede">善玩堂定制服务覆盖从图纸设计、木作定制到空间效果呈现的全流程。以下环境效果图，展示善玩堂家具进入不同空间后的陈设状态——同一器型亦可依空间尺度与风格调整尺寸与配置，实现「一器多境」的定制可能。</p>
     <div class="mag-rule"></div>
-    <div class="mag-body">
-      <div class="mag-cols">
-        <p>善玩堂坚持「器形有源、做工有道」，每一件家具皆有出处可循的经典器型，配以严谨的榫卯结构与纯手工细作。环境效果图呈现家具与空间的真实关系——比例是否合宜、陈设是否相称、气韵是否相生。定制之道，不在器之繁复，而在境之相宜。每一空间自有其性情，善玩堂以器应境，随空间而定制尺寸、材质与陈设方式，让明式家具之美自然融入当代生活。</p>
-      </div>
-      <div class="mag-plates">
-        <div class="m-item big"><span class="m-num">01</span><div class="m-frame"><img src="images/%E6%89%87%E5%BD%A2%E7%8E%AF%E5%A2%83%E6%95%88%E6%9E%9C%E5%9B%BE.jpg" alt="扇面形·南官帽椅 环境效果" loading="lazy"></div><div class="m-cap">扇面形·南官帽椅<small>空间环境效果</small></div></div>
-        <div class="m-item small"><span class="m-num">02</span><div class="m-frame"><img src="images/%E7%9F%AE%E5%8D%97%E5%AE%98%E5%B8%BD.jpg" alt="矮·南官帽椅 环境效果" loading="lazy"></div><div class="m-cap">矮·南官帽椅<small>空间环境效果</small></div></div>
-        <div class="m-item small"><span class="m-num">03</span><div class="m-frame"><img src="images/%E6%8A%B9%E7%89%99%E7%81%AF%E6%8C%82%E6%A4%85.jpg" alt="抹牙·灯挂椅 环境效果" loading="lazy"></div><div class="m-cap">抹牙·灯挂椅<small>空间环境效果</small></div></div>
-        <div class="m-item small"><span class="m-num">04</span><div class="m-frame"><img src="images/%E5%A4%A7%E7%82%95%E6%A1%88.jpg" alt="素弯腿·大炕案 环境效果" loading="lazy"></div><div class="m-cap">素弯腿·大炕案<small>空间环境效果</small></div></div>
-        <div class="m-item small"><span class="m-num">05</span><div class="m-frame"><img src="images/%E8%81%94%E4%BA%8C%E6%A9%B1.jpg" alt="带翘头二屉·橱柜 环境效果" loading="lazy"></div><div class="m-cap">带翘头二屉·橱柜<small>空间环境效果</small></div></div>
-        <div class="m-item big"><span class="m-num">06</span><div class="m-frame"><img src="images/%E9%A3%9E%E6%88%88%E5%9C%86%E6%A1%8C%E5%A5%97%E8%A3%85.jpg" alt="飞戈枨·圆桌 环境效果" loading="lazy"></div><div class="m-cap">飞戈枨·圆桌<small>空间环境效果</small></div></div>
-        <div class="m-item small"><span class="m-num">07</span><div class="m-frame"><img src="images/%E7%9B%B4%E6%A3%82%E6%9F%9C%E7%8E%AF%E5%A2%83%E5%9B%BE3.jpg" alt="直棂·壶柜 环境效果" loading="lazy"></div><div class="m-cap">直棂·壶柜<small>空间环境效果</small></div></div>
-        <div class="m-item small"><span class="m-num">08</span><div class="m-frame"><img src="images/%E6%98%8E%E5%BC%8F%E5%AE%B6%E5%85%B7%E6%99%BA%E8%83%BD%E4%BD%93%20(9).png" alt="明式家具·智能体" loading="lazy"></div><div class="m-cap">明式家具·智能体<small>空间环境效果</small></div></div>
-        <div class="mag-note">同一器型可依空间定制尺寸与陈设方式<br>更多空间环境效果持续收录中</div>
-      </div>
+
+    <div class="mag-row">
+      <div class="mag-text"><h4><small>01 · CHAIR</small>扇面形 · 南官帽椅</h4><p>扇形座面，前宽后窄，扶手曲线舒展，为明式椅类中最富画意的一种。依空间尺度定制，可独坐成景，亦可成对相向而设。</p></div>
+      <figure class="mag-fig"><img src="images/%E6%89%87%E5%BD%A2%E7%8E%AF%E5%A2%83%E6%95%88%E6%9E%9C%E5%9B%BE.jpg" alt="扇面形·南官帽椅 环境效果" loading="lazy"><figcaption><b>01</b> · 空间环境效果</figcaption></figure>
     </div>
+
+    <div class="mag-row flip">
+      <figure class="mag-fig"><img src="images/%E7%9F%AE%E5%8D%97%E5%AE%98%E5%B8%BD.jpg" alt="矮·南官帽椅 环境效果" loading="lazy"><figcaption><b>02</b> · 空间环境效果</figcaption></figure>
+      <figure class="mag-fig"><img src="images/%E6%8A%B9%E7%89%99%E7%81%AF%E6%8C%82%E6%A4%85.jpg" alt="抹牙·灯挂椅 环境效果" loading="lazy"><figcaption><b>03</b> · 空间环境效果</figcaption></figure>
+      <div class="mag-text"><h4><small>02 · 03 · CHAIRS</small>矮·南官帽椅 / 抹牙·灯挂椅</h4><p>矮官帽椅体量低矮，宜配炕桌、画案，茶室书房皆宜；抹牙灯挂椅牙条抹圆、靠背素洁，形如灯挂而轻巧挺秀。</p></div>
+    </div>
+
+    <div class="mag-row">
+      <div class="mag-text"><h4><small>04 · KANG TABLE</small>素弯腿 · 大炕案</h4><p>腿足外弯、牙板素面，案形宽厚沉稳。横陈厅堂、临窗而设，气度从容，最宜会客议事之场。</p></div>
+      <figure class="mag-fig"><img src="images/%E5%A4%A7%E7%82%95%E6%A1%88.jpg" alt="素弯腿·大炕案 环境效果" loading="lazy"><figcaption><b>04</b> · 空间环境效果</figcaption></figure>
+    </div>
+
+    <div class="mag-row flip">
+      <figure class="mag-fig"><img src="images/%E8%81%94%E4%BA%8C%E6%A9%B1.jpg" alt="带翘头二屉·橱柜 环境效果" loading="lazy"><figcaption><b>05</b> · 空间环境效果</figcaption></figure>
+      <figure class="mag-fig"><img src="images/%E9%A3%9E%E6%88%88%E5%9C%86%E6%A1%8C%E5%A5%97%E8%A3%85.jpg" alt="飞戈枨·圆桌 环境效果" loading="lazy"><figcaption><b>06</b> · 空间环境效果</figcaption></figure>
+      <div class="mag-text"><h4><small>05 · 06 · CABINET &amp; ROUND TABLE</small>翘头二屉·橱柜 / 飞戈枨·圆桌</h4><p>翘头橱柜储物陈设兼得，宜靠墙安放作隔断；飞戈枨圆桌以枨相连、可合可分，宜家庭围坐，亦宜茶室。</p></div>
+    </div>
+
+    <div class="mag-row">
+      <div class="mag-text"><h4><small>07 · CUPBOARD</small>直棂 · 壶柜</h4><p>柜面直棂疏朗、四面透空，宜陈茶壶茗器，置于案旁或架格之间，取意空灵。</p></div>
+      <figure class="mag-fig"><img src="images/%E7%9B%B4%E6%A3%82%E6%9F%9C%E7%8E%AF%E5%A2%83%E5%9B%BE3.jpg" alt="直棂·壶柜 环境效果" loading="lazy"><figcaption><b>07</b> · 空间环境效果</figcaption></figure>
+    </div>
+
+    <div class="mag-row flip">
+      <figure class="mag-fig"><img src="images/%E6%98%8E%E5%BC%8F%E5%AE%B6%E5%85%B7%E6%99%BA%E8%83%BD%E4%BD%93%20(9).png" alt="明式家具·空间效果" loading="lazy"><figcaption><b>08</b> · 空间环境效果</figcaption></figure>
+      <div class="mag-text"><h4><small>08 · MORE TO COME</small>更多空间 · 持续收录</h4><p>善玩堂以器应境，随空间定制尺寸、材质与陈设方式。更多器型的空间环境效果持续收录中，敬请期待。</p></div>
+    </div>
+
     <div class="mag-captions">
       <p><b>01</b> 扇面形·南官帽椅 —— 空间环境效果</p>
       <p><b>02</b> 矮·南官帽椅 —— 空间环境效果</p>
@@ -231,7 +244,7 @@
       <p><b>05</b> 带翘头二屉·橱柜 —— 空间环境效果</p>
       <p><b>06</b> 飞戈枨·圆桌 —— 空间环境效果</p>
       <p><b>07</b> 直棂·壶柜 —— 空间环境效果</p>
-      <p><b>08</b> 明式家具·智能体 —— 空间环境效果</p>
+      <p><b>08</b> 明式家具 —— 空间环境效果</p>
     </div>
     <div class="mag-foot"><span>SHANWANTANG · CUSTOM SERVICE</span><span>空间呈现 · 08</span></div>
   </div>
