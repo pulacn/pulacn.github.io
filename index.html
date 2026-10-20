@@ -6,65 +6,214 @@
 <title>周小博 · 个人主页</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif; background:#f7f5f1; color:#2b2b2b; line-height:1.7; }
-  .wrap { max-width:960px; margin:0 auto; padding:0 20px; }
-  nav { position:sticky; top:0; background:rgba(247,245,241,.94); border-bottom:1px solid #e5e0d6; z-index:10; }
-  nav .wrap { display:flex; justify-content:space-between; align-items:center; height:60px; }
+  body { font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif; background:#f7f5f1; color:#2b2b2b; line-height:1.75; }
+  .wrap { max-width:1000px; margin:0 auto; padding:0 20px; }
+  nav { position:sticky; top:0; background:rgba(247,245,241,.95); border-bottom:1px solid #e5e0d6; z-index:10; }
+  nav .wrap { display:flex; justify-content:space-between; align-items:center; height:60px; flex-wrap:wrap; }
   .brand { font-size:18px; font-weight:700; letter-spacing:2px; }
-  nav a { margin-left:22px; color:#6b6257; text-decoration:none; font-size:15px; }
+  nav a { margin-left:20px; color:#6b6257; text-decoration:none; font-size:14px; }
   nav a:hover { color:#9a6b3f; }
-  .hero { padding:88px 0 60px; text-align:center; }
-  .hero .name { font-size:50px; font-weight:800; letter-spacing:10px; }
-  .hero .role { margin-top:14px; font-size:18px; color:#5d564c; }
-  .hero .slogan { margin-top:22px; font-size:15px; color:#9a6b3f; letter-spacing:4px; }
-  .hero .line { width:56px; height:2px; background:#9a6b3f; margin:26px auto 0; }
-  section { padding:52px 0; }
-  h2 { font-size:21px; letter-spacing:4px; margin-bottom:24px; padding-left:14px; position:relative; }
+  .hero { padding:80px 0 54px; text-align:center; }
+  .hero .name { font-size:48px; font-weight:800; letter-spacing:10px; }
+  .hero .role { margin-top:14px; font-size:17px; color:#5d564c; }
+  .hero .slogan { margin-top:20px; font-size:14px; color:#9a6b3f; letter-spacing:4px; }
+  .hero .line { width:56px; height:2px; background:#9a6b3f; margin:24px auto 0; }
+  section { padding:48px 0; }
+  h2 { font-size:21px; letter-spacing:4px; margin-bottom:22px; padding-left:14px; position:relative; }
   h2::before { content:""; position:absolute; left:0; top:6px; bottom:6px; width:4px; background:#9a6b3f; }
-  .about-box { background:#fff; border:1px solid #e5e0d6; border-radius:10px; padding:26px; display:flex; gap:26px; flex-wrap:wrap; align-items:flex-start; }
-  .about-box img { width:230px; max-width:100%; border-radius:8px; border:1px solid #e5e0d6; }
-  .about-box .about-main { flex:1 1 340px; }
-  .about-box p { font-size:15px; color:#4a443c; max-width:740px; }
-  .about-meta { margin-top:14px; font-size:13.5px; color:#6b6257; line-height:2; }
-  .about-meta b { color:#8c3b2e; font-weight:600; }
-  .brand-box { background:#fff; border:1px solid #e5e0d6; border-radius:10px; padding:26px; }
-  .brand-name { font-size:23px; font-weight:800; letter-spacing:8px; color:#8c3b2e; }
-  .brand-desc { margin-top:12px; font-size:15px; color:#4a443c; }
+  .box { background:#fff; border:1px solid #e5e0d6; border-radius:10px; padding:24px; }
+  .about-top { display:flex; gap:26px; flex-wrap:wrap; align-items:flex-start; }
+  .about-top img { width:220px; max-width:100%; border-radius:8px; border:1px solid #e5e0d6; }
+  .about-main { flex:1 1 360px; }
+  .about-main p { font-size:14.5px; color:#4a443c; }
+  .kv { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:10px 24px; margin-top:16px; }
+  .kv div { font-size:13.5px; color:#6b6257; }
+  .kv b { color:#8c3b2e; font-weight:600; }
+  .block + .block { margin-top:18px; }
+  .block h3 { font-size:16px; color:#8c3b2e; letter-spacing:2px; margin-bottom:8px; }
+  .block p { font-size:14px; color:#4a443c; }
+  ol.refs { margin:0; padding-left:20px; font-size:13.5px; color:#4a443c; }
+  ol.refs li { margin-bottom:6px; }
+  .table-wrap { overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:12.5px; color:#4a443c; }
+  th,td { border:1px solid #e5e0d6; padding:6px 8px; text-align:left; vertical-align:top; }
+  th { background:#f4ece0; color:#8c3b2e; font-weight:600; white-space:nowrap; }
+  .brand-box { background:#fff; border:1px solid #e5e0d6; border-radius:10px; padding:24px; }
+  .brand-name { font-size:22px; font-weight:800; letter-spacing:8px; color:#8c3b2e; }
+  .brand-desc { margin-top:10px; font-size:14.5px; color:#4a443c; }
   .cards { display:flex; flex-wrap:wrap; gap:14px; }
-  .card { flex:1 1 200px; background:#fff; border:1px solid #e5e0d6; border-radius:10px; padding:18px; }
-  .card b { font-size:16px; }
-  .card p { margin-top:8px; font-size:14px; color:#6b6257; }
+  .card { flex:1 1 200px; background:#fff; border:1px solid #e5e0d6; border-radius:10px; padding:16px; }
+  .card b { font-size:15px; }
+  .card p { margin-top:6px; font-size:13.5px; color:#6b6257; }
   .contact p { font-size:15px; color:#4a443c; }
   .contact a { color:#8c3b2e; text-decoration:none; border-bottom:1px dashed #8c3b2e; }
-  footer { border-top:1px solid #e5e0d6; padding:22px 0; text-align:center; font-size:13px; color:#a49c8e; }
+  footer { border-top:1px solid #e5e0d6; padding:20px 0; text-align:center; font-size:13px; color:#a49c8e; }
 </style>
 </head>
 <body>
 <nav><div class="wrap">
   <div class="brand">周小博</div>
-  <div><a href="#about">关于</a><a href="#brand">品牌</a><a href="#fields">领域</a><a href="#contact">联系</a></div>
+  <div><a href="#about">简历</a><a href="#research">学术</a><a href="#projects">科研</a><a href="#awards">荣誉</a><a href="#brand">善玩堂</a><a href="#fields">领域</a><a href="#contact">联系</a></div>
 </div></nav>
 
 <div class="hero">
   <div class="wrap">
     <div class="name">周小博</div>
-    <div class="role">天津仁爱学院 副教授 · 产品设计专业教师 ｜ 明式家具品牌「善玩堂」主理人</div>
+    <div class="role">天津仁爱学院 副教授 · 产品设计专业负责人 ｜ 明式家具品牌「善玩堂」主理人</div>
     <div class="slogan">以设计连接传统与日常</div>
     <div class="line"></div>
   </div>
 </div>
 
 <section id="about"><div class="wrap">
-  <h2>关于</h2>
-  <div class="about-box">
-    <img src="images/zhouxiaobo.png" alt="周小博 教师简介照">
-    <div class="about-main">
-      <p>周小博，文学硕士、副教授，天津仁爱学院产品设计专业教师，本硕均毕业于天津美术学院，长期从事工业设计、产品设计方向的教学与创作实践，关注传统工艺的当代转化。曾指导学生完成「海河大爷」等地域文化文创设计课题，重视设计研究方法与人文关怀。同时主理明式家具定制品牌「善玩堂」，为不同空间定制家具与效果图方案，坚持比例、结构与工艺的严谨表达。</p>
-      <div class="about-meta">
-        <b>教育</b>：天津美术学院 本科 · 硕士<br>
-        <b>职称</b>：副教授 · 文学硕士<br>
-        <b>主讲课程</b>：《设计造型基础》《符号学与产品语义学》<br>
-        <b>所获荣誉</b>：第一届全国高校教师教学创新大赛校赛优秀奖
+  <h2>个人简历</h2>
+  <div class="box">
+    <div class="about-top">
+      <img src="images/zhouxiaobo.png" alt="周小博 教师简介照">
+      <div class="about-main">
+        <p>周小博，男，1980 年 6 月 27 日生，天津美术学院硕士研究生毕业，副教授，产品设计专业负责人。研究方向：产品设计。长期从事工业设计、产品设计方向的教学与创作实践，关注传统工艺的当代转化；同时主理明式家具定制品牌「善玩堂」，坚持比例、结构与工艺的严谨表达，为不同空间定制家具与效果图方案。</p>
+        <div class="kv">
+          <div><b>姓名</b>：周小博</div>
+          <div><b>性别</b>：男</div>
+          <div><b>出生年月</b>：1980.6.27</div>
+          <div><b>学历学位</b>：天津美术学院 硕士研究生</div>
+          <div><b>职称</b>：副教授</div>
+          <div><b>职务</b>：产品设计专业负责人</div>
+          <div><b>职业资格</b>：教师</div>
+          <div><b>研究方向</b>：产品设计</div>
+          <div><b>主讲课程</b>：形态设计基础、符号学与产品语义设计</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="research"><div class="wrap">
+  <h2>学术研究</h2>
+  <div class="box">
+    <div class="block">
+      <h3>期刊论文</h3>
+      <ol class="refs">
+        <li>蒋琪, 周小博, 张寞轩, 林杰威, 张炜. 食品包装的设计趋势与设计理论研究[J]. 中国食品工业, 2024, (03).</li>
+        <li>周小博, 于广琛. 基于无意识设计理念的明式家具改良设计[J]. 工业设计, 2024, (12).</li>
+        <li>周小博, 侯熠. 基于系统观的明式抽屉柜改良设计[J]. 工业设计, 2023, (09): 81-84.</li>
+        <li>周小博. 基于无意识的新明式方凳设计[J]. 包装工程, 2023, 44(24): 555.</li>
+        <li>周小博, 毕克克, 王若愚等. 关于对传统明式圈椅的设计改良[J]. 包装工程, 2019, 40(16): 221-226+267.</li>
+        <li>周小博. 神秘的产品色[J]. 中文信息, 2016.</li>
+      </ol>
+    </div>
+    <div class="block">
+      <h3>会议论文（CPCI-S）</h3>
+      <ol class="refs">
+        <li>Zhou Xiaobo. On human energy and product design[J]. CPCI-S, 2016.11.</li>
+        <li>Zhou Xiaobo. Introduction to Design Intelligent Air Purifier[J]. CPCI-S, 2017.1.</li>
+      </ol>
+    </div>
+    <div class="block">
+      <h3>教材著作</h3>
+      <ol class="refs">
+        <li>2018 年，第一作者、主编《设计调查与规划》，兵器工业出版社出版，10 万字。</li>
+        <li>2018 年，高等院校工业设计专业系列教材编委会编委、第三作者，参与编写《Photoshop CC 二维数字化辅助产品设计》，清华大学出版社出版，10 万字。</li>
+        <li>2018 年，副主编、第二作者参与编写《室内设计手绘表现实训》，中国建材工业出版社出版，10 万字。</li>
+        <li>2018 年，副主编、第二作者参与编写《设计概论》，兵器工业出版社出版，1 万字。</li>
+      </ol>
+    </div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>科研项目</h2>
+  <div class="box">
+    <p style="font-size:14px;color:#4a443c;margin-bottom:14px;">先后主持完成横向科研课题 10 余项，科研总经费 120 余万元；获授权专利 3 件；发表科研论文 6 篇（其中核心 3 篇），主编出版教材 1 部，参与教材 3 部。</p>
+    <div class="table-wrap">
+      <table>
+        <tr><th>起始时间</th><th>完成时间</th><th>项目编号</th><th>项目名称</th><th>项目来源</th><th>经费（万元）</th><th>负责人</th><th>作用</th><th>完成情况</th></tr>
+        <tr><td>2023-04-04</td><td>—</td><td>HX23032</td><td>“统型车”工业设计</td><td>泰安航天特种车有限公司</td><td>8.40</td><td>周小博</td><td>主持人</td><td>在研</td></tr>
+        <tr><td>2022-09-29</td><td>2023-03-22</td><td>HX22126</td><td>“自动出茶机”工业设计</td><td>国潮信息科技（东台）有限公司</td><td>8.00</td><td>周小博</td><td>主持人</td><td>已完成</td></tr>
+        <tr><td>2021-04-20</td><td>2022-11-20</td><td>HX21016</td><td>负压隔离头罩工业设计</td><td>天津捷强动力装备股份有限公司</td><td>9.50</td><td>周小博</td><td>主持人</td><td>已完成</td></tr>
+        <tr><td>2017-12-27</td><td>2018-06-20</td><td>HX17038M</td><td>台灯系列产品的工业设计</td><td>天津大学</td><td>4.07</td><td>周小博</td><td>主持人</td><td>已完成</td></tr>
+        <tr><td>2017-05-12</td><td>2017-07-04</td><td>HX17012M</td><td>新能源电动车的工业设计</td><td>天津大学</td><td>5.00</td><td>周小博</td><td>主持人</td><td>已完成</td></tr>
+        <tr><td>2016-05-16</td><td>2016-06-12</td><td>HX16010M</td><td>新能源电动车外观造型及内饰设计</td><td>天津嘉远电动车辆有限公司</td><td>10.00</td><td>周小博</td><td>主持人</td><td>已完成</td></tr>
+        <tr><td>2022-11-01</td><td>2023-04-01</td><td>HX22171M</td><td>基于物联网的智能制造数据洞察平台开发</td><td>天津天发总厂机电设备有限公司</td><td>180.00</td><td>周小博</td><td>第一参与人</td><td>已完成</td></tr>
+        <tr><td>2022-09-01</td><td>2023-12-26</td><td>HX22117MB</td><td>重载搬运机器人低能耗集成优化研究</td><td>天津天发总厂机电设备有限公司</td><td>400.00</td><td>周小博</td><td>第二参与人</td><td>已完成</td></tr>
+      </table>
+    </div>
+  </div>
+</div></section>
+
+<section id="awards"><div class="wrap">
+  <h2>荣誉与奖项</h2>
+  <div class="box">
+    <div class="block">
+      <h3>个人获奖</h3>
+      <p>荣获天津市教学成果奖一等奖 1 项、天津市教学成果奖二等奖 1 项；参与《粘稠食品软包装智能化生产线关键技术及产业化》项目，荣获天津市包装行业科学技术进步奖二等奖；天津市科学技术奖二等奖 1 项；首届全国高校教师教学创新大赛校赛优秀奖等多项荣誉。曾荣获天津市“旅游商品大赛”“大学生原创家具设计大赛”优秀指导教师；《海棠凳》《挂钟》《屉柜》等个人新明式家具作品曾荣获中国好设计（CGD）、天津国际设计周、深圳环球设计周、天津青年美术作品展、ANBD 亚洲联盟超越等多项奖项。</p>
+    </div>
+    <div class="block">
+      <h3>指导学生获奖</h3>
+      <p>指导学生获得国家级奖项 8 项、省部级奖项 50 余项（三等奖 7 项）；指导学生大创项目获国家级项目 2 项、市级项目 1 项。</p>
+    </div>
+    <div class="block">
+      <h3>指导学生竞赛获奖明细</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>年份</th><th>竞赛名称</th><th>级别</th><th>奖项</th><th>作品名称</th><th>指导教师</th></tr>
+          <tr><td>2026</td><td>第十九届天津市大学生工业与艺术设计竞赛</td><td>省部级</td><td>2</td><td>津沽三宝</td><td>周小博</td></tr>
+          <tr><td>2026</td><td>中国好创意（第二十届）暨全国数字艺术设计大赛</td><td>国赛</td><td>3（国）</td><td>《津派建筑》</td><td>周小博</td></tr>
+          <tr><td>2026</td><td>米兰设计周中国高校设计学科师生优秀作品展（天津赛区）</td><td>省部级</td><td>3</td><td>基于天津小站的 IP 形象设计</td><td>周小博</td></tr>
+          <tr><td>2026</td><td>米兰设计周中国高校设计学科师生优秀作品展（天津赛区）</td><td>省部级</td><td>2</td><td>西开教堂与瓷房子</td><td>周小博</td></tr>
+          <tr><td>2026</td><td>米兰设计周中国高校设计学科师生优秀作品展（全国决赛）</td><td>国赛</td><td>1（国）</td><td>西开教堂与瓷房子</td><td>周小博</td></tr>
+          <tr><td>2025</td><td>2025 第十三届未来设计师全国高校数字艺术设计大赛（NCDA）</td><td>国赛</td><td>3（国）</td><td>形谬</td><td>周小博</td></tr>
+          <tr><td>2025</td><td>2025 第十三届未来设计师全国高校数字艺术设计大赛（NCDA）</td><td>国赛</td><td>2（国）</td><td>多功能智慧文旅舱</td><td>周小博</td></tr>
+          <tr><td>2025</td><td>2025 第十三届未来设计师全国高校数字艺术设计大赛（NCDA）</td><td>省部级</td><td>3</td><td>朋侪</td><td>周小博</td></tr>
+          <tr><td>2025</td><td>2025 第十三届未来设计师全国高校数字艺术设计大赛（NCDA）</td><td>省部级</td><td>3</td><td>缠龙枝茶几</td><td>周小博</td></tr>
+          <tr><td>2025</td><td>2025 第十三届未来设计师全国高校数字艺术设计大赛（NCDA）</td><td>省部级</td><td>2</td><td>天津小站稻米 IP 形象设计</td><td>方婷、周小博</td></tr>
+          <tr><td>2025</td><td>2025 第十三届未来设计师全国高校数字艺术设计大赛（NCDA）</td><td>省部级</td><td>2</td><td>黛姑苏</td><td>周小博</td></tr>
+          <tr><td>2025</td><td>2025 第十三届未来设计师全国高校数字艺术设计大赛（NCDA）</td><td>省部级</td><td>2</td><td>形谬</td><td>周小博</td></tr>
+          <tr><td>2025</td><td>2025 第十三届未来设计师全国高校数字艺术设计大赛（NCDA）</td><td>省部级</td><td>1</td><td>多功能智慧文旅舱</td><td>周小博、边元</td></tr>
+          <tr><td>2025</td><td>东方设计奖全国高校创新设计大赛</td><td>省部级</td><td>3</td><td>伴宠-宠物陪伴机器人设计</td><td>周小博</td></tr>
+          <tr><td>2025</td><td>东方设计奖全国高校创新设计大赛</td><td>省部级</td><td>3</td><td>贩卖式半自动咖啡机设计</td><td>周小博</td></tr>
+          <tr><td>2025</td><td>东方设计奖全国高校创新设计大赛</td><td>省部级</td><td>3</td><td>基于未来智能化家居系统创新设计</td><td>周小博</td></tr>
+          <tr><td>2025</td><td>2025 第九届米兰设计周</td><td>省部级</td><td>3</td><td>元壁画人物酒瓶</td><td>周小博</td></tr>
+          <tr><td>2025</td><td>2025 第九届米兰设计周</td><td>省部级</td><td>2</td><td>大旋钮智能音响</td><td>周小博、方婷</td></tr>
+          <tr><td>2025</td><td>2025 第九届米兰设计周</td><td>省部级</td><td>1</td><td>鹿角转转杯</td><td>周小博、陈子奕</td></tr>
+          <tr><td>2024</td><td>2024 第十二届未来设计师全国高校数字艺术设计大赛（NCDA）</td><td>省部级</td><td>3</td><td>《虚拟现实潜水助推器》</td><td>周小博</td></tr>
+          <tr><td>2024</td><td>2024 第十二届未来设计师全国高校数字艺术设计大赛（NCDA）</td><td>省部级</td><td>2</td><td>基于元壁画人物的酒瓶设计</td><td>周小博</td></tr>
+          <tr><td>2024</td><td>出彩中国华艺杯设计大赛</td><td>国家级</td><td>1</td><td>《龙腾虎跃》</td><td>周小博</td></tr>
+          <tr><td>2024</td><td>第十八届中国好创意全国数字艺术设计大赛</td><td>省部级</td><td>1</td><td>基于元壁画人物的酒瓶设计</td><td>周小博</td></tr>
+          <tr><td>2023</td><td>全国三维数字化创新设计大赛</td><td>国家级</td><td>1</td><td>城市急救无人机</td><td>王若愚、周小博</td></tr>
+          <tr><td>2023</td><td>2023 第十一届未来设计师全国高校数字艺术设计大赛（NCDA）</td><td>省部级</td><td>2</td><td>智能闹钟音箱</td><td>周小博、王若愚</td></tr>
+          <tr><td>2023</td><td>第十六届天津市大学生工业与艺术设计竞赛</td><td>省部级</td><td>2</td><td>鹿角转转杯</td><td>周小博</td></tr>
+          <tr><td>2023</td><td>第十六届天津市大学生工业与艺术设计竞赛</td><td>省部级</td><td>2</td><td>竹筒传声——模块化户外蓝牙音箱</td><td>周小博</td></tr>
+          <tr><td>2023</td><td>第十六届天津市大学生工业与艺术设计竞赛</td><td>省部级</td><td>2</td><td>智能鼻炎净化器</td><td>周小博</td></tr>
+          <tr><td>2023</td><td>第十六届天津市大学生工业与艺术设计竞赛</td><td>省部级</td><td>3</td><td>多功能“表情包”净饮机</td><td>周小博</td></tr>
+          <tr><td>2023</td><td>第十六届天津市大学生工业与艺术设计竞赛</td><td>省部级</td><td>2</td><td>发条定时器趣味水杯设计</td><td>周小博</td></tr>
+          <tr><td>2023</td><td>第九届中国国际“互联网+”大学生创新创业大赛</td><td>省部级</td><td>银奖</td><td>“心脏卫士”-智慧城市急救无人机系统</td><td>王若愚、周小博</td></tr>
+          <tr><td>2022</td><td>第十五届天津市大学生工业与艺术设计竞赛</td><td>省部级</td><td>3</td><td>一盒模块化智能药盒</td><td>周小博</td></tr>
+          <tr><td>2022</td><td>第十五届天津市大学生工业与艺术设计竞赛</td><td>省部级</td><td>3</td><td>智能药盒水瓶</td><td>周小博</td></tr>
+          <tr><td>2022</td><td>第十五届天津市大学生工业与艺术设计竞赛</td><td>省部级</td><td>1</td><td>盲人模块化智能手环</td><td>周小博</td></tr>
+          <tr><td>2021</td><td>2021 全国冰雪设计大赛</td><td>省部级</td><td>3</td><td>小雪人存钱罐</td><td>周小博</td></tr>
+          <tr><td>2021</td><td>第十四届天津市大学生工业与艺术设计竞赛</td><td>省部级</td><td>3</td><td>铃铛药盒</td><td>周小博</td></tr>
+          <tr><td>2020</td><td>中国邮政辛丑年生肖文创大赛</td><td>省部级</td><td>3</td><td>牛年新春，五福临门</td><td>周小博</td></tr>
+          <tr><td>2020</td><td>2021 中国高校生肖设计大赛</td><td>省部级</td><td>3</td><td>牛年新春，五福临门</td><td>周小博</td></tr>
+          <tr><td>2019</td><td>第十二届天津市大学生工业与艺术设计竞赛</td><td>省部级</td><td>2</td><td>“左右”控量调味罐</td><td>周小博</td></tr>
+          <tr><td>2019</td><td>第十二届天津市大学生工业与艺术设计竞赛</td><td>省部级</td><td>1</td><td>“海螺”导管式可旋转药盒</td><td>周小博</td></tr>
+          <tr><td>2018</td><td>第十一届天津市大学生工业与艺术设计竞赛</td><td>省部级</td><td>1</td><td>可旋转垃圾桶</td><td>周小博</td></tr>
+          <tr><td>2015</td><td>第八届天津市大学生工业与艺术设计竞赛</td><td>省部级</td><td>3</td><td>支架式灯具设计</td><td>周小博</td></tr>
+          <tr><td>2012</td><td>第五届全国大学生机械创新设计大赛天津赛区</td><td>省部级</td><td>3</td><td>协同控制游艺箱</td><td>幺大锁、周小博</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="block">
+      <h3>指导学生大创项目</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>年份</th><th>项目名称</th><th>级别</th><th>指导教师</th></tr>
+          <tr><td>2024</td><td>基于未来智能化家居系统创新设计</td><td>市级</td><td>周小博、周恩玉</td></tr>
+          <tr><td>2021</td><td>茶丝-茶路创意产品设计</td><td>市级</td><td>周小博、石丽雯</td></tr>
+          <tr><td>2020</td><td>基于传统榫卯工艺的家具创新设计</td><td>国家级</td><td>周小博、毕克克</td></tr>
+          <tr><td>2019</td><td>基于语义符号的移动电源造型设计研究</td><td>国家级</td><td>周小博、王若愚</td></tr>
+          <tr><td>2017</td><td>3D 打印周边产品品质提升及定制化研究</td><td>市级</td><td>王若愚、周小博</td></tr>
+        </table>
       </div>
     </div>
   </div>
