@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PULACN · 个人主页</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif; background:#f7f5f1; color:#2b2b2b; line-height:1.7; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 20px; }
+  nav { position:sticky; top:0; background:rgba(247,245,241,.94); border-bottom:1px solid #e5e0d6; z-index:10; }
+  nav .wrap { display:flex; justify-content:space-between; align-items:center; height:60px; }
+  .brand { font-size:18px; font-weight:700; letter-spacing:2px; }
+  nav a { margin-left:22px; color:#6b6257; text-decoration:none; font-size:15px; }
+  nav a:hover { color:#9a6b3f; }
+  .hero { padding:88px 0 60px; text-align:center; }
+  .hero .name { font-size:50px; font-weight:800; letter-spacing:10px; }
+  .hero .role { margin-top:14px; font-size:18px; color:#5d564c; }
+  .hero .slogan { margin-top:22px; font-size:15px; color:#9a6b3f; letter-spacing:4px; }
+  .hero .line { width:56px; height:2px; background:#9a6b3f; margin:26px auto 0; }
+  section { padding:52px 0; }
+  h2 { font-size:21px; letter-spacing:4px; margin-bottom:24px; padding-left:14px; position:relative; }
+  h2::before { content:""; position:absolute; left:0; top:6px; bottom:6px; width:4px; background:#9a6b3f; }
+  .about p { font-size:15px; color:#4a443c; max-width:740px; }
+  .brand-box { background:#fff; border:1px solid #e5e0d6; border-radius:10px; padding:26px; }
+  .brand-name { font-size:23px; font-weight:800; letter-spacing:8px; color:#8c3b2e; }
+  .brand-desc { margin-top:12px; font-size:15px; color:#4a443c; }
+  .cards { display:flex; flex-wrap:wrap; gap:14px; }
+  .card { flex:1 1 200px; background:#fff; border:1px solid #e5e0d6; border-radius:10px; padding:18px; }
+  .card b { font-size:16px; }
+  .card p { margin-top:8px; font-size:14px; color:#6b6257; }
+  .contact p { font-size:15px; color:#4a443c; }
+  .contact a { color:#8c3b2e; text-decoration:none; border-bottom:1px dashed #8c3b2e; }
+  footer { border-top:1px solid #e5e0d6; padding:22px 0; text-align:center; font-size:13px; color:#a49c8e; }
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="brand">PULACN</div>
+  <div><a href="#about">关于</a><a href="#brand">品牌</a><a href="#fields">领域</a><a href="#contact">联系</a></div>
+</div></nav>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="name">PULACN</div>
+    <div class="role">高校教师 · 工业设计方向 ｜ 明式家具品牌「善玩堂」主理人</div>
+    <div class="slogan">以设计连接传统与日常</div>
+    <div class="line"></div>
+  </div>
+</div>
+
+<section id="about"><div class="wrap">
+  <h2>关于</h2>
+  <p>【您的姓名】，【任教高校/单位】工业设计方向教师，长期从事设计教学与创作实践，关注传统工艺的当代转化。曾指导学生完成「海河大爷」等地域文化文创设计课题，重视设计研究方法与人文关怀。同时主理明式家具定制品牌「善玩堂」，为不同空间定制家具与效果图方案，坚持比例、结构与工艺的严谨表达。</p>
+</div></section>
+
+<section id="brand"><div class="wrap">
+  <h2>善玩堂 · 明式家具定制</h2>
+  <div class="brand-box">
+    <div class="brand-name">善 玩 堂</div>
+    <div class="brand-desc">专注明式家具定制，按客户需求提供不同空间的定制效果图方案；坚持传统家具的比例、尺寸与造型细节，让经典进入当代生活。【补充品牌介绍：工艺、材质、服务流程等】</div>
+  </div>
+</div></section>
+
+<section id="fields"><div class="wrap">
+  <h2>领域</h2>
+  <div class="cards">
+    <div class="card"><b>家具设计</b><p>明式家具定制 · 比例与造型研究</p></div>
+    <div class="card"><b>空间效果图</b><p>按空间需求输出定制效果方案</p></div>
+    <div class="card"><b>设计教学</b><p>工业设计方向课程与实践指导</p></div>
+    <div class="card"><b>文创产品</b><p>地域文化与品牌 IP 创意转化</p></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <h2>联系</h2>
+  <div class="contact">
+    <p>邮箱：<a href="mailto:pulacn@163.com">pulacn@163.com</a></p>
+    <p>【可选：其他联系方式，如微信 / 作品集链接】</p>
+  </div>
+</div></section>
+
+<footer><div class="wrap">© 2026 PULACN · Powered by GitHub Pages</div></footer>
+</body>
+</html>
