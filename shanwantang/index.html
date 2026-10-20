@@ -7,18 +7,18 @@
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif; background:#f7f5f1; color:#2b2b2b; line-height:1.7; }
-  .wrap { max-width:960px; margin:0 auto; padding:0 20px; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 20px; }
   nav { position:sticky; top:0; background:rgba(247,245,241,.94); border-bottom:1px solid #e5e0d6; z-index:10; }
-  nav .wrap { display:flex; justify-content:space-between; align-items:center; height:60px; }
+  nav .wrap { display:flex; justify-content:space-between; align-items:center; height:60px; flex-wrap:wrap; }
   .brand { font-size:17px; font-weight:700; letter-spacing:4px; color:#8c3b2e; }
-  nav a { margin-left:20px; color:#6b6257; text-decoration:none; font-size:14px; }
+  nav a { margin-left:18px; color:#6b6257; text-decoration:none; font-size:14px; }
   nav a:hover { color:#9a6b3f; }
-  .hero { padding:80px 0 52px; text-align:center; background:linear-gradient(180deg,#f0e9dd 0%,#f7f5f1 100%); }
-  .hero .cn { font-size:46px; font-weight:800; letter-spacing:18px; color:#8c3b2e; }
-  .hero .en { margin-top:10px; font-size:14px; letter-spacing:6px; color:#6b6257; }
-  .hero .slogan { margin-top:18px; font-size:16px; color:#2b2b2b; letter-spacing:3px; }
-  .hero .line { width:52px; height:2px; background:#9a6b3f; margin:22px auto 0; }
-  section { padding:50px 0; }
+  .hero { padding:76px 0 48px; text-align:center; background:linear-gradient(180deg,#f0e9dd 0%,#f7f5f1 100%); }
+  .hero .cn { font-size:44px; font-weight:800; letter-spacing:18px; color:#8c3b2e; }
+  .hero .en { margin-top:10px; font-size:13px; letter-spacing:6px; color:#6b6257; }
+  .hero .slogan { margin-top:16px; font-size:16px; color:#2b2b2b; letter-spacing:3px; }
+  .hero .line { width:52px; height:2px; background:#9a6b3f; margin:20px auto 0; }
+  section { padding:46px 0; }
   h2 { font-size:21px; letter-spacing:4px; margin-bottom:22px; padding-left:14px; position:relative; }
   h2::before { content:""; position:absolute; left:0; top:6px; bottom:6px; width:4px; background:#9a6b3f; }
   p.desc { font-size:15px; color:#4a443c; max-width:760px; }
@@ -26,11 +26,10 @@
   .icon-name { font-size:18px; font-weight:800; color:#8c3b2e; letter-spacing:2px; }
   .icon-tag { display:inline-block; margin-top:8px; background:#f4ece0; color:#8c3b2e; border:1px solid #d8c9ae; border-radius:999px; padding:3px 12px; font-size:13px; }
   .icon-desc { margin-top:10px; font-size:14px; color:#4a443c; }
-  .series { display:flex; flex-wrap:wrap; gap:14px; }
-  .s-card { flex:1 1 200px; background:#fff; border:1px solid #e5e0d6; border-radius:10px; padding:18px; text-align:center; }
-  .s-card b { font-size:16px; color:#2b2b2b; }
-  .s-card p { margin-top:6px; font-size:13px; color:#6b6257; }
-  .s-card .img-ph { height:96px; background:#efe9de; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:12px; color:#a49c8e; margin-bottom:10px; }
+  .grid { display:flex; flex-wrap:wrap; gap:14px; }
+  .w-card { flex:1 1 200px; max-width:240px; background:#fff; border:1px solid #e5e0d6; border-radius:10px; padding:10px; text-align:center; }
+  .w-card img { width:100%; height:170px; object-fit:cover; border-radius:8px; background:#efe9de; }
+  .w-card b { display:block; margin-top:8px; font-size:14px; color:#2b2b2b; }
   .steps { display:flex; flex-wrap:wrap; gap:14px; }
   .step { flex:1 1 200px; background:#fff; border:1px solid #e5e0d6; border-radius:10px; padding:16px; }
   .step b { display:block; font-size:15px; color:#8c3b2e; }
@@ -44,7 +43,7 @@
 <body>
 <nav><div class="wrap">
   <div class="brand">善玩堂</div>
-  <div><a href="#brand">品牌</a><a href="#icon">代表器型</a><a href="#series">作品</a><a href="#service">定制</a><a href="#contact">联系</a><a href="../">返回个人主页</a></div>
+  <div><a href="#brand">品牌</a><a href="#icon">代表器型</a><a href="#works">作品</a><a href="#service">定制</a><a href="#contact">联系</a><a href="../">返回个人主页</a></div>
 </div></nav>
 
 <div class="hero">
@@ -70,14 +69,82 @@
   </div>
 </div></section>
 
-<section id="series"><div class="wrap">
-  <h2>作品系列</h2>
-  <div class="series">
-    <div class="s-card"><div class="img-ph">图片待补充</div><b>万字栏杆架格</b><p>代表器型</p></div>
-    <div class="s-card"><div class="img-ph">图片待补充</div><b>海棠凳</b><p>中国好设计获奖作品</p></div>
-    <div class="s-card"><div class="img-ph">图片待补充</div><b>挂钟</b><p>设计周参展作品</p></div>
-    <div class="s-card"><div class="img-ph">图片待补充</div><b>屉柜</b><p>新明式家具作品</p></div>
-  </div>
+<section id="works"><div class="wrap">
+  <h2>作品</h2>
+  <p class="desc" style="margin-bottom:26px;">按器型类别收录善玩堂代表作品。</p>
+  <section id="cat-椅凳类"><div class="wrap">
+<h2>椅凳类</h2>
+<div class="grid">
+<div class="w-card"><img src="images/B-01%E6%9B%B2%E5%B0%BA.jpg" alt="B-01曲尺" loading="lazy"><b>B-01曲尺</b></div>
+<div class="w-card"><img src="images/B-02%E7%8B%AC%E6%9D%BF%E7%BD%97%E6%B1%89.jpg" alt="B-02独板罗汉" loading="lazy"><b>B-02独板罗汉</b></div>
+<div class="w-card"><img src="images/B-03%E7%9B%B4%E8%85%BF%E7%BD%97%E6%B1%89.jpg" alt="B-03直腿罗汉" loading="lazy"><b>B-03直腿罗汉</b></div>
+<div class="w-card"><img src="images/C-01%E6%89%87%E5%BD%A2.jpg" alt="C-01扇形" loading="lazy"><b>C-01扇形</b></div>
+<div class="w-card"><img src="images/C-02%E7%9F%AE%E5%8D%97%E5%AE%98.jpg" alt="C-02矮南官" loading="lazy"><b>C-02矮南官</b></div>
+<div class="w-card"><img src="images/C-03%E5%BC%AF%E6%9D%90.jpg" alt="C-03弯材" loading="lazy"><b>C-03弯材</b></div>
+<div class="w-card"><img src="images/C-04%E8%83%8C%E9%9B%95.jpg" alt="C-04背雕" loading="lazy"><b>C-04背雕</b></div>
+<div class="w-card"><img src="images/C-04%E8%83%8C%E9%9B%95w.jpg" alt="C-04背雕w" loading="lazy"><b>C-04背雕w</b></div>
+<div class="w-card"><img src="images/C-05%E7%81%AF%E6%8C%82.jpg" alt="C-05灯挂" loading="lazy"><b>C-05灯挂</b></div>
+<div class="w-card"><img src="images/C-06%E9%A3%9E%E6%88%88%E6%9E%A8.jpg" alt="C-06飞戈枨" loading="lazy"><b>C-06飞戈枨</b></div>
+<div class="w-card"><img src="images/C-07%E9%A3%9E%E6%88%88%E6%9E%A8%E5%AE%98%E5%B8%BD.jpg" alt="C-07飞戈枨官帽" loading="lazy"><b>C-07飞戈枨官帽</b></div>
+<div class="w-card"><img src="images/C-08%20%E6%8A%B9%E7%89%99%E7%81%AF%E6%8C%82.jpg" alt="C-08 抹牙灯挂" loading="lazy"><b>C-08 抹牙灯挂</b></div>
+<div class="w-card"><img src="images/S-01%E5%AF%8C%E8%B4%B5%E5%87%B3.jpg" alt="S-01富贵凳" loading="lazy"><b>S-01富贵凳</b></div>
+<div class="w-card"><img src="images/S-02%E6%B5%B7%E6%A3%A0.jpg" alt="S-02海棠" loading="lazy"><b>S-02海棠</b></div>
+<div class="w-card"><img src="images/T-20%E9%97%A8%E5%87%B3.jpg" alt="T-20门凳" loading="lazy"><b>T-20门凳</b></div>
+<div class="w-card"><img src="images/T-20%E9%97%A8%E5%87%B3w.jpg" alt="T-20门凳w" loading="lazy"><b>T-20门凳w</b></div>
+</div>
+</div></section>
+<section id="cat-桌案类"><div class="wrap">
+<h2>桌案类</h2>
+<div class="grid">
+<div class="w-card"><img src="images/LT-04%E7%B4%A0%E5%BC%AF%E8%85%BF%E7%82%95%E6%A1%88.jpg" alt="LT-04素弯腿炕案" loading="lazy"><b>LT-04素弯腿炕案</b></div>
+<div class="w-card"><img src="images/T-01%E9%95%82%E7%A9%BA%E7%89%99%E6%9D%A1%E7%82%95%E6%A1%8C%20%E5%89%AF%E6%9C%AC.jpg" alt="T-01镂空牙条炕桌 副本" loading="lazy"><b>T-01镂空牙条炕桌 副本</b></div>
+<div class="w-card"><img src="images/T-02%E6%92%87%E8%85%BF%E7%82%95%E6%A1%88%20%E5%89%AF%E6%9C%AC.jpg" alt="T-02撇腿炕案 副本" loading="lazy"><b>T-02撇腿炕案 副本</b></div>
+<div class="w-card"><img src="images/T-03%E5%8D%B7%E4%BA%91%E7%BA%B9%E7%94%BB%E6%A1%88.jpg" alt="T-03卷云纹画案" loading="lazy"><b>T-03卷云纹画案</b></div>
+<div class="w-card"><img src="images/T-04%E8%A3%B9%E8%85%BF%E7%BD%97%E9%94%85%E6%9E%A8%E7%94%BB%E6%A1%88%20%E5%89%AF%E6%9C%AC.jpg" alt="T-04裹腿罗锅枨画案 副本" loading="lazy"><b>T-04裹腿罗锅枨画案 副本</b></div>
+<div class="w-card"><img src="images/T-05%E4%B8%80%E8%85%BF%E4%B8%89%E7%89%99%E5%B0%8F%E6%9D%A1%E6%A1%88.jpg" alt="T-05一腿三牙小条案" loading="lazy"><b>T-05一腿三牙小条案</b></div>
+<div class="w-card"><img src="images/T-07%E9%9C%B8%E7%8E%8B%E6%9E%A8%E6%9D%A1%E6%A1%88%20%E5%89%AF%E6%9C%AC.jpg" alt="T-07霸王枨条案 副本" loading="lazy"><b>T-07霸王枨条案 副本</b></div>
+<div class="w-card"><img src="images/T-08%E5%A4%B9%E5%A4%B4%E6%A6%AB%E5%B9%B3%E5%A4%B4%E6%A1%88.jpg" alt="T-08夹头榫平头案" loading="lazy"><b>T-08夹头榫平头案</b></div>
+<div class="w-card"><img src="images/T-09%E5%B1%89%E6%9D%BF%E5%B0%8F%E5%B9%B3%E5%A4%B4%E6%A1%88.jpg" alt="T-09屉板小平头案" loading="lazy"><b>T-09屉板小平头案</b></div>
+<div class="w-card"><img src="images/T-12%E5%85%AD%E4%BB%99.jpg" alt="T-12六仙" loading="lazy"><b>T-12六仙</b></div>
+<div class="w-card"><img src="images/T-13%E5%A4%A7%E6%9D%A1%E6%A1%88.jpg" alt="T-13大条案" loading="lazy"><b>T-13大条案</b></div>
+<div class="w-card"><img src="images/T-14%E5%85%AB%E4%BB%99.jpg" alt="T-14八仙" loading="lazy"><b>T-14八仙</b></div>
+<div class="w-card"><img src="images/T-15%E6%8B%90%E5%AD%90%E9%A6%99%E5%87%A0.jpg" alt="T-15拐子香几" loading="lazy"><b>T-15拐子香几</b></div>
+<div class="w-card"><img src="images/T-17%E9%A4%90%E6%A1%8C.jpg" alt="T-17餐桌" loading="lazy"><b>T-17餐桌</b></div>
+<div class="w-card"><img src="images/T-19%E7%9F%B3%E9%9D%A2%E9%A6%99%E5%87%A0.jpg" alt="T-19石面香几" loading="lazy"><b>T-19石面香几</b></div>
+<div class="w-card"><img src="images/T-21%E9%9C%B8%E7%8E%8B%E6%88%90%E7%94%BB%E6%A1%88.jpg" alt="T-21霸王成画案" loading="lazy"><b>T-21霸王成画案</b></div>
+<div class="w-card"><img src="images/T-22%E5%B9%B3%E5%A4%B4%E7%94%BB%E6%A1%88.jpg" alt="T-22平头画案" loading="lazy"><b>T-22平头画案</b></div>
+<div class="w-card"><img src="images/T-23%E6%9E%B6%E5%87%A0%E6%A1%88.jpg" alt="T-23架几案" loading="lazy"><b>T-23架几案</b></div>
+<div class="w-card"><img src="images/T-24%E9%A3%9E%E6%88%88%E6%9E%A8%E5%9C%86%E6%A1%8C.jpg" alt="T-24飞戈枨圆桌" loading="lazy"><b>T-24飞戈枨圆桌</b></div>
+<div class="w-card"><img src="images/T-25%E6%8F%92%E8%82%A9%E6%A6%AB%E6%9D%A1%E6%A1%88.jpg" alt="T-25插肩榫条案" loading="lazy"><b>T-25插肩榫条案</b></div>
+</div>
+</div></section>
+<section id="cat-柜架类"><div class="wrap">
+<h2>柜架类</h2>
+<div class="grid">
+<div class="w-card"><img src="images/L-01%E8%81%94%E4%BA%8C%E6%A9%B1.jpg" alt="L-01联二橱" loading="lazy"><b>L-01联二橱</b></div>
+<div class="w-card"><img src="images/L-03%E4%B8%83%E6%96%97%E6%A9%B1.jpg" alt="L-03七斗橱" loading="lazy"><b>L-03七斗橱</b></div>
+<div class="w-card"><img src="images/L-03%E5%93%81%E5%AD%97.jpg" alt="L-03品字" loading="lazy"><b>L-03品字</b></div>
+<div class="w-card"><img src="images/L-04%E5%8D%81%E5%AD%97.jpg" alt="L-04十字" loading="lazy"><b>L-04十字</b></div>
+<div class="w-card"><img src="images/L-05%E7%AA%84%E6%9F%9C.jpg" alt="L-05窄柜" loading="lazy"><b>L-05窄柜</b></div>
+<div class="w-card"><img src="images/L-06%E6%96%97%E6%A9%B1.jpg" alt="L-06斗橱" loading="lazy"><b>L-06斗橱</b></div>
+<div class="w-card"><img src="images/L-06%E7%8E%B2%E7%8F%91.jpg" alt="L-06玲珑" loading="lazy"><b>L-06玲珑</b></div>
+<div class="w-card"><img src="images/L-08%E5%85%A8%E6%95%9E%E6%9E%B6%E6%A0%BC.jpg" alt="L-08全敞架格" loading="lazy"><b>L-08全敞架格</b></div>
+<div class="w-card"><img src="images/L-09%20%E7%9B%B4%E6%A3%82%E5%A3%B6%E6%9F%9C.jpg" alt="L-09 直棂壶柜" loading="lazy"><b>L-09 直棂壶柜</b></div>
+<div class="w-card"><img src="images/L-09%E4%B8%83%E6%96%97%E6%A9%B1.jpg" alt="L-09七斗橱" loading="lazy"><b>L-09七斗橱</b></div>
+<div class="w-card"><img src="images/%E7%AA%84%E6%9F%9C.jpg" alt="窄柜" loading="lazy"><b>窄柜</b></div>
+</div>
+</div></section>
+<section id="cat-床榻类"><div class="wrap">
+<h2>床榻类</h2>
+<p class="desc">作品整理中，敬请期待。</p>
+</div></section>
+<section id="cat-其他类"><div class="wrap">
+<h2>其他类</h2>
+<div class="grid">
+<div class="w-card"><img src="images/O-01mistake%E6%8C%82%E9%92%9F.jpg" alt="O-01mistake挂钟" loading="lazy"><b>O-01mistake挂钟</b></div>
+</div>
+</div></section>
+
 </div></section>
 
 <section id="service"><div class="wrap">
