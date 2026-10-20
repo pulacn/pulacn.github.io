@@ -22,9 +22,11 @@
   h2 { font-size:21px; letter-spacing:4px; margin-bottom:24px; padding-left:14px; position:relative; }
   h2::before { content:""; position:absolute; left:0; top:6px; bottom:6px; width:4px; background:#9a6b3f; }
   .about p { font-size:15px; color:#4a443c; max-width:740px; }
-  .brand-box { background:#fff; border:1px solid #e5e0d6; border-radius:10px; padding:26px; }
+  .brand-box { background:#fff; border:1px solid #e5e0d6; border-radius:10px; padding:26px; display:flex; gap:26px; align-items:center; flex-wrap:wrap; }
+  .brand-logo { width:220px; max-width:100%; border-radius:8px; border:1px solid #e5e0d6; }
   .brand-name { font-size:23px; font-weight:800; letter-spacing:8px; color:#8c3b2e; }
   .brand-desc { margin-top:12px; font-size:15px; color:#4a443c; }
+  .brand-main { flex:1 1 300px; }
   .cards { display:flex; flex-wrap:wrap; gap:14px; }
   .card { flex:1 1 200px; background:#fff; border:1px solid #e5e0d6; border-radius:10px; padding:18px; }
   .card b { font-size:16px; }
@@ -57,8 +59,11 @@
 <section id="brand"><div class="wrap">
   <h2>善玩堂 · 明式家具定制</h2>
   <div class="brand-box">
-    <div class="brand-name">善 玩 堂</div>
-    <div class="brand-desc">专注明式家具定制，按客户需求提供不同空间的定制效果图方案；坚持传统家具的比例、尺寸与造型细节，让经典进入当代生活。【补充品牌介绍：工艺、材质、服务流程等】</div>
+    <img class="brand-logo" src="shanwantang/images/%E5%96%84%E7%8E%A9%E5%A0%82logo.jpg" alt="善玩堂">
+    <div class="brand-main">
+      <div class="brand-name">善 玩 堂</div>
+      <div class="brand-desc">专注明式家具定制，按客户需求提供不同空间的定制效果图方案；坚持传统家具的比例、尺寸与造型细节，让经典进入当代生活。【补充品牌介绍：工艺、材质、服务流程等】</div>
+    </div>
   </div>
 </div></section>
 
@@ -76,7 +81,7 @@
   <h2>联系</h2>
   <div class="contact">
     <p>邮箱：<a href="mailto:pulacn@163.com">pulacn@163.com</a></p>
-    <p>【可选：其他联系方式，如微信 / 作品集链接】</p>
+    <p>微信 / 电话：13702109058</p>
   </div>
 </div></section>
 
