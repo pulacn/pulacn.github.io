@@ -21,7 +21,12 @@
   section { padding:52px 0; }
   h2 { font-size:21px; letter-spacing:4px; margin-bottom:24px; padding-left:14px; position:relative; }
   h2::before { content:""; position:absolute; left:0; top:6px; bottom:6px; width:4px; background:#9a6b3f; }
-  .about p { font-size:15px; color:#4a443c; max-width:740px; }
+  .about-box { background:#fff; border:1px solid #e5e0d6; border-radius:10px; padding:26px; display:flex; gap:26px; flex-wrap:wrap; align-items:flex-start; }
+  .about-box img { width:230px; max-width:100%; border-radius:8px; border:1px solid #e5e0d6; }
+  .about-box .about-main { flex:1 1 340px; }
+  .about-box p { font-size:15px; color:#4a443c; max-width:740px; }
+  .about-meta { margin-top:14px; font-size:13.5px; color:#6b6257; line-height:2; }
+  .about-meta b { color:#8c3b2e; font-weight:600; }
   .brand-box { background:#fff; border:1px solid #e5e0d6; border-radius:10px; padding:26px; }
   .brand-name { font-size:23px; font-weight:800; letter-spacing:8px; color:#8c3b2e; }
   .brand-desc { margin-top:12px; font-size:15px; color:#4a443c; }
@@ -43,7 +48,7 @@
 <div class="hero">
   <div class="wrap">
     <div class="name">周小博</div>
-    <div class="role">天津仁爱学院 副教授 · 产品设计专业负责人 ｜ 明式家具品牌「善玩堂」主理人</div>
+    <div class="role">天津仁爱学院 副教授 · 产品设计专业教师 ｜ 明式家具品牌「善玩堂」主理人</div>
     <div class="slogan">以设计连接传统与日常</div>
     <div class="line"></div>
   </div>
@@ -51,7 +56,18 @@
 
 <section id="about"><div class="wrap">
   <h2>关于</h2>
-  <p>周小博，天津仁爱学院产品设计专业教师、副教授，产品设计专业负责人，本硕均毕业于天津美术学院，长期从事工业设计、产品设计方向的教学与创作实践，关注传统工艺的当代转化。曾指导学生完成「海河大爷」等地域文化文创设计课题，重视设计研究方法与人文关怀。同时主理明式家具定制品牌「善玩堂」，为不同空间定制家具与效果图方案，坚持比例、结构与工艺的严谨表达。</p>
+  <div class="about-box">
+    <img src="images/zhouxiaobo.png" alt="周小博 教师简介照">
+    <div class="about-main">
+      <p>周小博，文学硕士、副教授，天津仁爱学院产品设计专业教师，本硕均毕业于天津美术学院，长期从事工业设计、产品设计方向的教学与创作实践，关注传统工艺的当代转化。曾指导学生完成「海河大爷」等地域文化文创设计课题，重视设计研究方法与人文关怀。同时主理明式家具定制品牌「善玩堂」，为不同空间定制家具与效果图方案，坚持比例、结构与工艺的严谨表达。</p>
+      <div class="about-meta">
+        <b>教育</b>：天津美术学院 本科 · 硕士<br>
+        <b>职称</b>：副教授 · 文学硕士<br>
+        <b>主讲课程</b>：《设计造型基础》《符号学与产品语义学》<br>
+        <b>所获荣誉</b>：第一届全国高校教师教学创新大赛校赛优秀奖
+      </div>
+    </div>
+  </div>
 </div></section>
 
 <section id="brand"><div class="wrap">
