@@ -26,7 +26,7 @@
   h2::before { content:""; position:absolute; left:0; top:6px; bottom:6px; width:4px; background:#9a6b3f; }
   p.desc { font-size:15px; color:#4a443c; max-width:760px; }
   .icon-box { background:#fff; border:1px solid #e5e0d6; border-radius:10px; padding:22px; margin-top:10px; display:flex; gap:22px; flex-wrap:wrap; align-items:flex-start; }
-  .icon-box img { width:300px; max-width:100%; border-radius:8px; border:1px solid #e5e0d6; }
+  .icon-box img { width:300px; max-width:100%; border-radius:8px; border:1px solid #e5e0d6; cursor:zoom-in; }
   .icon-main { flex:1 1 320px; }
   .icon-name { font-size:18px; font-weight:800; color:#8c3b2e; letter-spacing:2px; }
   .icon-tag { display:inline-block; margin-top:8px; background:#f4ece0; color:#8c3b2e; border:1px solid #d8c9ae; border-radius:999px; padding:3px 12px; font-size:13px; }
@@ -34,7 +34,7 @@
   .icon-meta { margin-top:8px; font-size:13px; color:#6b6257; }
   .grid { display:flex; flex-wrap:wrap; gap:14px; }
   .w-card { flex:1 1 200px; max-width:246px; background:#fff; border:1px solid #e5e0d6; border-radius:10px; padding:10px; text-align:center; }
-  .w-card img { width:100%; height:auto; display:block; border-radius:8px; background:#efe9de; }
+  .w-card img { width:100%; height:auto; display:block; border-radius:8px; background:#efe9de; cursor:zoom-in; }
   .w-card b { display:block; margin-top:6px; font-size:13px; color:#2b2b2b; line-height:1.45; }
   .w-card .sub { display:block; margin-top:2px; font-size:11px; color:#a49c8e; line-height:1.35; }
   .steps { display:flex; flex-wrap:wrap; gap:14px; }
@@ -45,6 +45,18 @@
   .contact a { color:#8c3b2e; text-decoration:none; border-bottom:1px dashed #8c3b2e; }
   footer { border-top:1px solid #e5e0d6; padding:22px 0; text-align:center; font-size:13px; color:#a49c8e; }
   .back a { color:#8c3b2e; text-decoration:none; font-size:14px; }
+  /* Lightbox */
+  .lightbox { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,.93); z-index:999; align-items:center; justify-content:center; }
+  .lightbox.show { display:flex; }
+  .lightbox img { max-width:94vw; max-height:86vh; object-fit:contain; border-radius:6px; box-shadow:0 10px 40px rgba(0,0,0,.6); }
+  .lb-close { position:absolute; top:14px; right:24px; color:#fff; font-size:40px; line-height:1; cursor:pointer; user-select:none; opacity:.9; }
+  .lb-close:hover { opacity:1; color:#d4af6a; }
+  .lb-prev, .lb-next { position:absolute; top:50%; transform:translateY(-50%); color:#fff; font-size:44px; line-height:1; width:56px; height:72px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,.08); border:none; border-radius:10px; cursor:pointer; user-select:none; }
+  .lb-prev:hover, .lb-next:hover { background:rgba(212,175,106,.28); }
+  .lb-prev { left:16px; }
+  .lb-next { right:16px; }
+  .lb-cap { position:absolute; bottom:20px; left:0; right:0; text-align:center; color:#e8e0d0; font-size:14px; letter-spacing:1px; padding:0 16px; }
+  .lb-hint { position:absolute; top:14px; left:24px; color:#9a907d; font-size:12px; letter-spacing:2px; }
 </style>
 </head>
 <body>
@@ -83,7 +95,7 @@
 
 <section id="works"><div class="wrap">
   <h2>作品</h2>
-  <p class="desc" style="margin-bottom:26px;">按器型类别收录善玩堂代表作品，名称与尺寸均依作品册原样。</p>
+  <p class="desc" style="margin-bottom:26px;">按器型类别收录善玩堂代表作品，名称与尺寸均依作品册原样，点击预览图可查看大图。</p>
   <section id="cat-椅凳类"><div class="wrap">
 <h2>椅凳类</h2>
 <div class="grid">
@@ -177,5 +189,47 @@
 </div></section>
 
 <footer><div class="wrap">© 2026 善玩堂 · 周小博 <span class="back"><a href="../">返回个人主页</a></span></div></footer>
+
+<div class="lightbox" id="lb">
+  <span class="lb-hint">← → 切换 · Esc 关闭</span>
+  <span class="lb-close" id="lbClose">×</span>
+  <button class="lb-prev" id="lbPrev" aria-label="上一张">‹</button>
+  <img id="lbImg" src="" alt="大图">
+  <button class="lb-next" id="lbNext" aria-label="下一张">›</button>
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+
+<script>
+(function(){
+  var items=[];
+  document.querySelectorAll('.w-card').forEach(function(card){
+    var img=card.querySelector('img');
+    var name=card.querySelector('b')?card.querySelector('b').textContent:'';
+    var sub=card.querySelector('.sub')?card.querySelector('.sub').textContent:'';
+    items.push({src:img.getAttribute('src'), cap:name+'  '+(sub||'')});
+    img.addEventListener('click',function(){ open(items.length-1); });
+  });
+  var iconImg=document.querySelector('.icon-box img');
+  if(iconImg){
+    items.push({src:iconImg.getAttribute('src'), cap:'明·万字栏杆架格  52.4×31.4 H178cm · 奥式黄檀'});
+    iconImg.addEventListener('click',function(){ open(items.length-1); });
+  }
+  var lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'), lbCap=document.getElementById('lbCap'), cur=0;
+  function open(i){ cur=i; render(); lb.classList.add('show'); document.body.style.overflow='hidden'; }
+  function render(){ var it=items[cur]; lbImg.src=it.src; lbCap.textContent=it.cap; }
+  function close(){ lb.classList.remove('show'); document.body.style.overflow=''; }
+  function nav(d){ cur=(cur+d+items.length)%items.length; render(); }
+  document.getElementById('lbClose').addEventListener('click',close);
+  document.getElementById('lbPrev').addEventListener('click',function(e){ e.stopPropagation(); nav(-1); });
+  document.getElementById('lbNext').addEventListener('click',function(e){ e.stopPropagation(); nav(1); });
+  lb.addEventListener('click',function(e){ if(e.target===lb) close(); });
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('show')) return;
+    if(e.key==='Escape') close();
+    else if(e.key==='ArrowLeft') nav(-1);
+    else if(e.key==='ArrowRight') nav(1);
+  });
+})();
+</script>
 </body>
 </html>
